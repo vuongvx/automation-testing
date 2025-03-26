@@ -1,0 +1,15 @@
+{
+  "name": "api-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "newman run 'Simple Books API.postman_collection.json' -r cli,htmlextra"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "newman": "^6.2.1",
+    "newman-reporter-htmlextra": "^1.23.1"
+  }
+}
