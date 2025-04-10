@@ -32,12 +32,17 @@ describe('Home Page Functionality', function () {
 
     const ourItem = await page.home.text(By.css('.inventory_item_name'));
     logger.debug(`Our item: ${ourItem}`);
-    expect(ourItem).to.contain('Sauce Labs', "Item name does not contain 'Sauce Labs'");
+    expect(ourItem).to.contain(
+      'Sauce Labs',
+      "Item name does not contain 'Sauce Labs'",
+    );
 
     await page.home.click(By.css('.btn_inventory'));
     await page.home.driver.sleep(2000);
 
-    const results = await page.home.text(By.css('[data-test="shopping-cart-badge"]'));
+    const results = await page.home.text(
+      By.css('[data-test="shopping-cart-badge"]'),
+    );
     logger.debug(`Results: ${results}`);
     expect(results).to.contain('1');
     await page.home.driver.sleep(5000);

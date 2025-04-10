@@ -1,6 +1,6 @@
-import { Locator, WebDriver } from "selenium-webdriver";
-import { elementLocated } from "selenium-webdriver/lib/until";
-import { config } from "../config/index";
+import { Locator, WebDriver } from 'selenium-webdriver';
+import { elementLocated } from 'selenium-webdriver/lib/until';
+import { config } from '../config/index';
 
 export class BasePage {
   public driver: WebDriver;
@@ -26,7 +26,7 @@ export class BasePage {
    this.visit('/somewhere') // opens ${baseUrl}/somewhere
   */
   async visit(url: string) {
-    if (!url.startsWith("/")) {
+    if (!url.startsWith('/')) {
       return this.driver.navigate().to(url);
     }
     const baseUrl = config.baseUrl;
@@ -48,7 +48,7 @@ export class BasePage {
 
   async type(
     locator: Locator,
-    inputText: string | number | Promise<string | number>
+    inputText: string | number | Promise<string | number>,
   ) {
     return await this.find(locator).sendKeys(inputText);
   }
@@ -66,7 +66,7 @@ export class BasePage {
   }
 
   async class(locator: Locator) {
-    return await this.find(locator).getAttribute("class");
+    return await this.find(locator).getAttribute('class');
   }
 
   async url() {

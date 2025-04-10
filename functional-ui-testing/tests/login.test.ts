@@ -26,8 +26,12 @@ describe('Login Functionality', function () {
   it('shows the products page when user submits valid credentials', async function () {
     await page.login.authenticate(config.username, config.password);
     await page.login.driver.sleep(2000);
-    const productPageTitle = await page.login.text(By.css('[data-test="title"]'));
-    const isInventoryContainerVisible = await page.login.isVisible(By.css('[data-test="inventory-container"]'));
+    const productPageTitle = await page.login.text(
+      By.css('[data-test="title"]'),
+    );
+    const isInventoryContainerVisible = await page.login.isVisible(
+      By.css('[data-test="inventory-container"]'),
+    );
     const url = await page.login.url();
     expect(productPageTitle).equal('Products');
     expect(url).equal(`${config.baseUrl}/inventory.html`);
@@ -37,6 +41,8 @@ describe('Login Functionality', function () {
   it('shows error response message when user submits invalid credentials', async function () {
     await page.login.authenticate(config.username, '!nv4lidP455w0rD');
     const message = await page.login.failureMessagePresent();
-    expect(message).contain('Username and password do not match any user in this service');
+    expect(message).contain(
+      'Username and password do not match any user in this service',
+    );
   });
 });

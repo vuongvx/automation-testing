@@ -1,0 +1,21 @@
+{
+  "name": "contract-testing",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test:consumer": "node runConsumerTest.js",
+    "test:provider": "node runProviderTest.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cross-env": "^7.0.3",
+    "@pact-foundation/pact": "14.0.0",
+    "mocha": "^11.0.0",
+    "superagent": "^10.0.0",
+    "chai": "^4.3.7",
+    "chai-as-promised": "^7.1.1"
+  }
+}
